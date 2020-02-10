@@ -1,9 +1,11 @@
 name: Actions Workflow 
 
 on:
-  schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *" 
+  repository_dispatch:
+    types: [build]
+  # schedule:
+  #   - cron: "0/5 * * * *"
+  #   - cron: "0/6 * * * *" 
   # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
@@ -12,6 +14,8 @@ jobs:
   run-github-actions: 
     runs-on: ubuntu-latest
     steps:
+      - name: playload
+        run: echo ${{ github.event.client_payload.env }}
       - name: List Files 
         run: |
           pwd

@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - name: dump
-        run |
+        run: |
           echo ${{ contains( 'hello', '11' ) }}
           echo ${{ startsWith( 'hello', 'he' ) }}
           echo ${{ endsWith( 'hello', '1o' ) }}

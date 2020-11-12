@@ -9,6 +9,7 @@
     "key3": {
       "key": "value",
       "key2": "value"
-    }
+    },
+    "array": ["item1", "item2"]
   }
 }

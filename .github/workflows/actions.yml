@@ -9,11 +9,21 @@ jobs:
     - name: List Files
       run: |
         pwd
-        ls 
+        ls -a
+
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: List Files after Checkout
+      run: |
+        pwd
+        ls -a
+
     - name: Simple JS Action
       id: greet
       uses: actions/hello-world-javascript-action@main
       with: 
         who-to-greet: Achim
+        
     - name: Log greeting time
       run: echo "${{ steps.greet.outputs.time }}"

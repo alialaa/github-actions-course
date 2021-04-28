@@ -3,6 +3,7 @@ name: Shell Commands
 on: [push]
 
 jobs:
+  environment: dbg
   run-shell-command:
     runs-on: ubuntu-latest
     steps: 

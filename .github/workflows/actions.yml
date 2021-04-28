@@ -6,10 +6,14 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+    - name: List Files
+      run: |
+        pwd
+        ls 
     - name: Simple JS Action
       id: greet
-      uses: actions/hello-world-javascript-action@v1
+      uses: actions/hello-world-javascript-action@main
       with: 
-        who-to-greet: John
+        who-to-greet: Achim
     - name: Log greeting time
       run: echo "${{ steps.greet.outputs.time }}"

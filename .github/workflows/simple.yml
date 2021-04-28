@@ -5,7 +5,7 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
-    environment: dbg
+    environment: none
     steps: 
       - name: echo a string
         run: eCCho "Hello Achim"

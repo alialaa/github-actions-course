@@ -5,10 +5,11 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
+    # set environment to dbg for detailed wf info, otherwise none
     environment: none
     steps: 
       - name: echo a string
-        run: eCCho "Hello Achim"
+        run: echo "Hello Achim"
       - name: multiline script 
         run: |
            node -v 

@@ -1,3 +1,9 @@
+#name: workflow name
+#on: define trigger. can be 1 or [] array of events
+#Jobs: can be one of more jobs
+  # run-on: define runner
+  # job steps where steps list actions/commmands
+  
 name: Shell Commands 
 
 on: [push]

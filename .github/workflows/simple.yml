@@ -21,6 +21,12 @@ jobs:
       - name: python command
         run: |
             import platform
-            print
-            (platform.processor())
+            print (platform.processor())
         shell: python
+  run-windows-command:
+    runs-on: windows-latest
+    needs: ["run-shell-command"]
+    steps: 
+      - name: Directory Bash
+        run: pwd
+        shell: bash

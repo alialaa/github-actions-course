@@ -3,7 +3,7 @@
 #Jobs: can be one of more jobs
   # run-on: define runner
   # job steps where steps list actions/commmands
-  
+
 name: Shell Commands 
 
 on: [push]
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: echo a string
-        run: echo "Hello World"
+        run: eccho "Hello World"
       - name: multiline script 
         run: |
            node -v 

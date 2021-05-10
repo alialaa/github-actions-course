@@ -14,7 +14,7 @@ on:
 jobs:
   deploy-gcp:
     name: "Deploy to GCP production prototype"
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/pull/657/merge'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/pull/1/merge'
     runs-on: ubuntu-latest
     steps: 
       - name: checkout

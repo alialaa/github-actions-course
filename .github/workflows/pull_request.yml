@@ -1,6 +1,6 @@
 name: PR workflow
 
-# Controls when the action will run.
+# Controls when the action will run
 on:
   push:
     # Only run on the master branch.

@@ -1,0 +1,29 @@
+name: CI for fdy
+
+# Controls when the action will run.
+on:
+  push:
+    # Only run on the master branch.
+    branches: [master]
+
+  pull_request:
+    # Only run on pull requests against master.
+    branches: [master]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy-gcp:
+    name: "Deploy to GCP production prototype"
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/pull/657/merge'
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout
+        uses: actions/checkout@v2.3.4
+      - name: list files after checkout 
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"

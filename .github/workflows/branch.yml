@@ -10,7 +10,7 @@ on:
 jobs:
   master:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.event.ref_type != 'branch'
     env:
       ENVIRONMENT_NAME: prod
     steps: 
@@ -24,12 +24,12 @@ jobs:
       ENVIRONMENT_NAME: github.event.ref
     steps: 
       - name: deploy application to new branch
-        if: github.event.created
+        if: github.event_name == 'create'
         run: |
           echo "kubectl create -n ${ENVIRONMENT_NAME}"    
 
       - name: Delete application from removed branch
-        if: github.event.deleted
+        if: github.event_name == 'delete'
         run: |
           echo "kubectl delete all --all -n ${ENVIRONMENT_NAME}"
           

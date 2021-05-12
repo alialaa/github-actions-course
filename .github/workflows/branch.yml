@@ -1,4 +1,4 @@
-name: Context workflow
+name: branch workflow
 
 on:
   push:

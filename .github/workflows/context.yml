@@ -8,9 +8,8 @@ on:
   delete: 
 
 jobs:
-  one:
+  print-context:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     steps:
       - name: Dump GitHub context
         env:

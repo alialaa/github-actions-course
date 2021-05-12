@@ -1,6 +1,11 @@
 name: Context workflow
 
-on: push
+on:
+  push:
+    # Only run on the master branch.
+    branches: [master]
+  create:
+  delete: 
 
 jobs:
   one:

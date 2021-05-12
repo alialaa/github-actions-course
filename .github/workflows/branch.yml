@@ -1,0 +1,35 @@
+name: Context workflow
+
+on:
+  push:
+    # Only run on the master branch.
+    branches: [master]
+  create:
+  delete:  
+
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    env:
+      ENVIRONMENT_NAME: prod
+    steps: 
+      - name: deploy application to production
+        run: |
+          echo "kubectl create -n ${ENVIRONMENT_NAME}"      
+
+  branch:
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT_NAME: github.event.repository.branches_url
+    steps: 
+      - name: deploy application to new branch
+        if: github.ref != 'refs/heads/master' && github.event.created
+        run: |
+          echo "kubectl create -n ${ENVIRONMENT_NAME}"    
+
+      - name: Delete application from removed branch
+        if: github.ref != 'refs/heads/master' && github.event.deleted
+        run: |
+          echo "kubectl delete all --all -n ${ENVIRONMENT_NAME}"
+          

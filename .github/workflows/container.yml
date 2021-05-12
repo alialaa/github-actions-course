@@ -1,18 +1,18 @@
-name: Container workflow
+# name: Container workflow
 
-on: [push]
+# on: [push]
 
-jobs:
-  node-docker:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    container: 
-      image: node:13.5.0-alpine3.10
-#      env:
-#      ports: 
-#      volumes:
-    steps:
-      - name: log node version
-        run: | 
-          node -v
-          cat /etc/os-release
+# jobs:
+#   node-docker:
+#     runs-on: ubuntu-latest
+#     if: github.ref == 'refs/heads/master'
+#     container: 
+#       image: node:13.5.0-alpine3.10
+# #      env:
+# #      ports: 
+# #      volumes:
+#     steps:
+#       - name: log node version
+#         run: | 
+#           node -v
+#           cat /etc/os-release

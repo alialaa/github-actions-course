@@ -4,31 +4,31 @@
   # run-on: define runner
   # job steps where steps list actions/commmands
 
-name: Shell Commands 
+# name: Shell Commands 
 
-on: [push]
+# on: [push]
 
-jobs:
-  run-shell-command:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps: 
-      - name: echo a string
-        run: echo "Hello World"
-      - name: multiline script 
-        run: |
-           node -v 
-           npm -v
-      - name: python command
-        run: |
-            import platform
-            print (platform.processor())
-        shell: python
-  run-windows-command:
-    runs-on: windows-latest
-    if: github.ref == 'refs/heads/master'
-    needs: ["run-shell-command"]
-    steps: 
-      - name: Directory Bash
-        run: pwd
-        shell: bash
+# jobs:
+#   run-shell-command:
+#     runs-on: ubuntu-latest
+#     if: github.ref == 'refs/heads/master'
+#     steps: 
+#       - name: echo a string
+#         run: echo "Hello World"
+#       - name: multiline script 
+#         run: |
+#            node -v 
+#            npm -v
+#       - name: python command
+#         run: |
+#             import platform
+#             print (platform.processor())
+#         shell: python
+#   run-windows-command:
+#     runs-on: windows-latest
+#     if: github.ref == 'refs/heads/master'
+#     needs: ["run-shell-command"]
+#     steps: 
+#       - name: Directory Bash
+#         run: pwd
+#         shell: bash

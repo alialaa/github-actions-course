@@ -21,7 +21,7 @@ jobs:
   branch:
     runs-on: ubuntu-latest
     env:
-      ENVIRONMENT_NAME: github.event.ref
+      ENVIRONMENT_NAME: ${{github.event.ref}}
     steps: 
       - name: deploy application to new branch
         if: github.event_name == 'create'

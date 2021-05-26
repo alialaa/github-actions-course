@@ -1,6 +1,11 @@
 name: Actions Workflow
 
-on: [push]
+on: 
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+  schedule:
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
 
 jobs:
   run-github-actions:
@@ -13,7 +18,9 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-
+          echo "${{github.token}}"
+          # git clone git@github.$GITHUB_REPOSITORY
+          git checkout $ SG
       - name: Checkout
         uses: actions/checkout@v1
       - name: List Files

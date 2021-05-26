@@ -1,1 +1,17 @@
-{age: 28, name: Ali}
+name: Flippie
+age: 27
+key: 
+  - key: value
+    key2: value2
+
+mutliLine: >
+  fjdsffds fdsafdsa
+  fdsafasd
+  fdsafdsaf fds
+  fdsafds fdsafdsa
+
+mutliLinepreserveNewline: |
+  fjdsffds fdsafdsa
+  fdsafasd
+  fdsafdsaf fds
+  fdsafds fdsafdsa

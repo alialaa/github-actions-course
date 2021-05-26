@@ -12,4 +12,4 @@ jobs:
         with: 
           who-to-greet: Flippie
       - name: Log Greeting Time
-        run: echo "${{ steps.greet }}"         
+        run: echo "${{ steps.greet.outputs.time }}"         

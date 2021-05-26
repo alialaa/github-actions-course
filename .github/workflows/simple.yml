@@ -1,6 +1,6 @@
 name: Shell Commands 
 
-on: [push]
+on: [pull_request]
 
 jobs:
   run-shell-command:
@@ -21,7 +21,7 @@ jobs:
 
   runs-windows-commands:
     runs-on: windows-latest
-    needs: ["run-shell-command"]
+    needs: ["run-shell-command"``]
     steps:
       - name: Directory Powershell
         run: Get-Location

@@ -1,1 +1,4 @@
-{age: 28, name: Ali}
+{
+  "age": 28,
+  "name": "Ali"
+}

@@ -1,0 +1,14 @@
+name: Pull Request
+on:
+  workflow_run:
+    workflows: ["Dependabot PR Check"]
+    types: 
+      - completed
+    
+jobs:
+  pull_request:
+    runs-on: ubuntu-20.04
+    name: Test split workflow
+
+    steps:
+      - run: echo "Test split workflow"

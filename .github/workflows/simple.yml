@@ -13,7 +13,7 @@ jobs:
            node -v 
            npm -v
       - name: script
-        run: eccho "Hello Anca"
+        run: echo "Hello Anca"
       - name: python command 
         run: |
           import platform

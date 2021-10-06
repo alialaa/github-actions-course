@@ -13,4 +13,10 @@ jobs:
            node -v 
            npm -v
       - name: script
-        run: echo "Hello Anca"
+        run: eccho "Hello Anca"
+      - name: python command 
+        run: |
+          import platform
+          print
+          (platform.processor())
+        shell: python

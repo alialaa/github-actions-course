@@ -12,4 +12,5 @@ jobs:
         run: |
            node -v 
            npm -v
-           top
+      - name: script
+        run: echo "Hello Anca"

@@ -2,7 +2,7 @@ name: actions workflow
 
 on: [push]
 
-job:
+jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:

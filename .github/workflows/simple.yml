@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: echo a string
-        run: echo "Hello World"
+        run: echo "Hello World - Praveen"
         timeout-minutes: 0
       - name: multiline script 
         run: |

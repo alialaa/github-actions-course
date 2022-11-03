@@ -1,8 +1,8 @@
 name: Actions Workflow
 
-on: push
+on: [push]
 
-Job:
+jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:

@@ -1,30 +1,14 @@
-name: Shell Commands 
+name: shell commands
 
-on: [pull_request]
+on: [push]
 
 jobs:
-  run-shell-command:
+  run-shell-command: 
     runs-on: ubuntu-latest
     steps: 
       - name: echo a string
-        run: echo "Hello World"
-        timeout-minutes: 0
-      - name: multiline script 
+        run: echo "hello world"
+      - name: multiline script
         run: |
-           node -v 
-           npm -v
-      - name: python Command 
-        run: |
-          import platform 
-          print
-          (platform.processor())
-        shell: python
-  run-windwos-commands:
-    runs-on: windows-latest
-    needs: ["run-shell-command"]
-    steps:
-      - name: Directory PowerShell
-        run: Get-Location 
-      - name: Directory Bash 
-        run: pwd 
-        shell: bash 
+          node -v
+          npm -v
